@@ -1,4 +1,4 @@
-# DE_FlaskApp_ToxicComments
+# ToxicComments
 A Flask web app that allows the user to post comments only if the comment is non-toxic.
 
 Deployed website : http://comment-classifier.herokuapp.com/
