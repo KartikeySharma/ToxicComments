@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Toxic Comment Classifier</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Toxic Comment Classifier</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="enter your comment" placeholder="comment" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Post comment</button>
+    </form>
+
+   <br>
+   <br>
+
+
+      {%if output==0%}
+      <p>{{prediction_text[0]}}</p>
+      <p>{{prediction_text[1]}}</p>
+      <p><font color='green'>{{prediction_text[2]}}<font color='green'></p>
+      <p>{{prediction_text[3]}}</p>
+      <p><font color='white'>{{prediction_text[4]}}</font></p>
+      {%endif%}
+
+      {%if output==1%}
+      <p>{{prediction_text[0]}}</p>
+      <p>{{prediction_text[1]}}</p>
+      <p><font color='red'>{{prediction_text[2]}}<font color='red'></p>
+      <p>{{prediction_text[3]}}</p>
+      <p>{{prediction_text[4]}}</p>
+      {%endif%}
+
+ </div>
+
+
+</body>
+</html>
